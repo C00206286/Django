@@ -16,8 +16,14 @@
      <div class="invalid-feedback">
        {{ error }}
      </div>
-     {% endfor %}
-     {% else %}
-     {% render_field field class=field|input_class %}
-     {% endif %}
-{% endfor %}
+    {% endfor %}
+    {% else %}
+    {% render_field field class=field|input_class %}
+    {% endif %}
+    {% if field.help_text %}
+      <small class= "form-text text-muted">
+        {{field.help_text|safe}}
+      </small>
+    {% endif %}
+  </div>
+{%endfor%}
