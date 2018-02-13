@@ -9,6 +9,7 @@
 {% endif %}
 
 {% for field in form %}
+{{field.label_tag}}
   <div class="form-group">
     {% if form.is_bound %}
     {% render_field field class=field|input_class %}
